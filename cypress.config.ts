@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
-import { defineConfig } from "cypress";
+import { defineConfig } from 'cypress';
 
 export default defineConfig({
   component: {
     supportFile: 'cypress/support/component.ts',
     devServer: {
-      framework: "react",
-      bundler: "vite",
+      framework: 'react',
+      bundler: 'vite',
     },
   },
   e2e: {
