@@ -1,29 +1,19 @@
 /* eslint-disable no-unused-vars */
-import { defineConfig } from 'cypress';
-import mochawesome from 'cypress-mochawesome-reporter/plugin';
+import { defineConfig } from "cypress";
 
 export default defineConfig({
-  projectId: 'qos6rs',
   component: {
     supportFile: 'cypress/support/component.ts',
     devServer: {
-      framework: 'react',
-      bundler: 'vite',
+      framework: "react",
+      bundler: "vite",
     },
   },
   e2e: {
     setupNodeEvents(on, config) {
-      mochawesome(on);
+      // 노드 이벤트 설정
     },
-    baseUrl: 'http://localhost:5173',
-    supportFile: false,
-    specPattern: 'cypress/{e2e,component}/**/*.cy.{js,jsx,ts,tsx}',
-    reporter: 'cypress-mochawesome-reporter',
-    reporterOptions: {
-      reportDir: 'cypress/reports',
-      overwrite: false,
-      html: true,
-      json: true,
-    },
+    baseUrl: 'http://localhost:5173', // 예시 URL
+    // 기타 설정 옵션
   },
 });
